@@ -1,11 +1,15 @@
 clear
 clc
 
+% initial conditions
+
 C0 = 5*10^3;
 I0 = 770000;
 M0 = 64000;
 
 d1= 1*10^6;
+
+% simulation; solver ode23
 
 [t,y] = ode23s(@MMm2,[0:0.1:100],[C0 ; I0 ; M0]);
 % [ts,ys] = ode23s(@MMm2,[0:0.1:20],[Cp0; I0; M0]);
@@ -18,11 +22,11 @@ d1= 1*10^6;
 % y=[ys; ym];
 % t=[ts; tm];
 
-
+% plotting
 
 plot(t,y(:,1),'r-',t,y(:,2),'k.-',t,y(:,3),'b.-')
 xlabel('Time (days after tumor cells inoculation)');
-ylabel('Cells number (×10^7)');
+ylabel('Cells number (Ã—10^7)');
 legend('Tumor cell','Immune cell','MDSC')
 ylim([0 70000000])
 
