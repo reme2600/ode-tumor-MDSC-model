@@ -1,7 +1,12 @@
+% ODE-based tumor-MDSC-immune interaction model
+% Includes simulation and parameter exploration
+ 
  function dydt = MMm2(t,y)
 global t1;
 global e;
 global ts;
+
+% parameters
 
 a1=0.38*10^-1;
 Cmax = 10^9;
@@ -14,10 +19,11 @@ mue= 4.5*10^-8;
 alpha=2.2*10^-1;
 beta=0.35;
 
+% equations
 
-a = a1 * y(1) * log(Cmax/(y(1)+1)) - tau * y(1) * y(2); %y1 = C
+a = a1 * y(1) * log(Cmax/(y(1)+1)) - tau * y(1) * y(2); %y1 = C, cancer cell
 
-b = s + y(2) * (q * (y(1)^2)/(l + y(1)^2)) - n * y(2) - mue * y(2) * y(3); %y2 = I
+b = s + y(2) * (q * (y(1)^2)/(l + y(1)^2)) - n * y(2) - mue * y(2) * y(3); %y2 = I, immune cells
 
 c = alpha * y(1) - beta * y(3); %y3 = MDSC
 
