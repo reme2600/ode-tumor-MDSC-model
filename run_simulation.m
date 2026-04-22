@@ -14,8 +14,8 @@ d1= 1*10^6;
 
 % simulation; solver ode23
 
-[t,y] = ode23s(@MMm2,[0:0.1:100],[C0 ; I0 ; M0]);
-% [ts,ys] = ode23s(@MMm2,[0:0.1:20],[Cp0; I0; M0]);
+[t,y] = ode23s(@tumor_MDSC_immune_model,[0:0.1:100],[C0 ; I0 ; M0]);
+% [ts,ys] = ode23s(@tumor_MDSC_immune_model,[0:0.1:20],[Cp0; I0; M0]);
 % Cp0= ys(end,1)+d1;
 % Cq0= ys(end,2);
 % I0= ys(end,3);
