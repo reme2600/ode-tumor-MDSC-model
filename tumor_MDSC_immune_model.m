@@ -1,7 +1,6 @@
-% ODE-based tumor-MDSC-immune interaction model
-% Includes simulation and parameter exploration
+% Defines ODE system and parameters for tumor–MDSC-immune interactions MMm2 version
  
- function dydt = MMm2(t,y)
+ function dydt = tumor_MDSC_immune_model(t,y)
 global t1;
 global e;
 global ts;
