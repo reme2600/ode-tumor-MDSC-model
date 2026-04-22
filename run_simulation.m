@@ -1,3 +1,6 @@
+% Main script for simulating tumor–MDSC-immune model MM11 version
+% Defines initial conditions and runs the simulation
+
 clear
 clc
 
